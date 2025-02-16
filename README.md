@@ -71,6 +71,10 @@ Open your browser (e.g., Chrome) and visit the following URL to access the nav-e
 
 https://your_server_ip
 
+Default user and password:
+- user: `admin`
+- password: `123456`
+
 > You must set port `80` can access in inbound rules of security rules
 
 Finally you can resolve your domain to your IP, and you can access nav-editor project like it
