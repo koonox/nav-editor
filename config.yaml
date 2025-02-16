@@ -1,0 +1,52 @@
+jwt:
+    signing-key: 'ZVIdzzRBbtNt81dW'
+    expires-time: 604800
+    buffer-time: 86400
+    issuer: 'nav-editor-api'
+zap:
+    level: 'debug'
+    format: 'console'
+    prefix: '[NAV-EDITOR-API]'
+    director: 'log'
+    link-name: 'latest_log'
+    show-line: true
+    encode-level: 'LowercaseColorLevelEncoder'
+    stacktrace-key: 'stacktrace'
+    log-in-console: true
+    retention-day: 30
+redis:
+    addr: 'redis:6379'
+    password: ""
+    db: 0
+system:
+    addr: 8888
+    use-multipoint: false
+    use-redis: true
+    iplimit-count: 15000
+    iplimit-time: 3600
+    router-prefix: ""
+    oss-type: "local"
+    rsa-public-key-path: ./public.pem
+    mode-sub-link-url: https://test.com
+    max-enable-mode-count: 4
+    max-mode-category-count: 10
+    max-category-website-count: 100
+captcha:
+    key-long: 6
+    img-width: 240
+    img-height: 80
+    open-captcha: 0
+    open-captcha-timeout: 3600
+mysql:
+    path: 'mysql:3306'
+    config: 'charset=utf8mb4&parseTime=True&loc=Local'
+    db-name: 'nav'
+    username: 'root'
+    password: "123456"
+    max-idle-conns: 10
+    max-open-conns: 100
+    log-mode: 'error'
+    log-zap: false
+local:
+    path: 'uploads/file'
+    storePath: 'uploads/file'

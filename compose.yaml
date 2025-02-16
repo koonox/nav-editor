@@ -1,0 +1,58 @@
+services:
+  nav-editor-web:
+    image: nav-editor-web:latest
+    container_name: nav-editor-web
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    networks:
+      - nav
+    ports:
+      - "8080:8080"
+    depends_on:
+      - nav-editor-api
+
+  nav-editor-api:
+    image: nav-editor-api:latest
+    platform: linux/amd64
+    container_name: nav-editor-api
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./public.pem:/app/public.pem:ro
+      - ./config.yaml:/app/config.yaml:ro
+      - ./uploads/file:/app/uploads/file
+    networks:
+      - nav
+    depends_on:
+      - mysql
+      - redis
+
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: nav
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./db_data:/var/lib/mysql
+      # - ./my.cnf:/etc/mysql/my.cnf
+    networks:
+      - nav
+
+  redis:
+    image: redis:latest
+    restart: always
+    environment:
+      REDIS_PASSWORD: ""
+    volumes:
+      - ./redis_data:/data
+    networks:
+      - nav
+
+networks:
+  nav:
+    driver: bridge
