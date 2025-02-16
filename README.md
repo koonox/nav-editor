@@ -67,7 +67,9 @@ sudo docker compose up -d
 
 If run sucess, nav-editor will listen to default port `80`
 
-Open your browser (e.g., Chrome) and visit the following URL to access the nav-editor:
+> You should allow access to port 80 in the inbound rules of your security group
+
+Visit the following URL in your browser (e.g., Chrome) to access the nav-editor:
 
 `https://your_server_ip`
 
@@ -75,7 +77,7 @@ Default username and password:
 - username: `admin`
 - password: `123456`
 
-> You must set port `80` can access in inbound rules of security rules
+
 
 Finally you can resolve your domain to your IP, and you can access nav-editor project like:
 
