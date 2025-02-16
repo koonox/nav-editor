@@ -21,26 +21,26 @@ You can register a domain at any domain provider, and we recommend to resolve DN
 
 Install docker by aws yum repository:
 
-```bash
+```
 sudo yum install -y docker
 ```
 
 Or install and start docker with docker install script manually:
 
-```bash
+```
 curl -fsSL https://get.docker.com | sh
 sudo systemctl start docker
 ```
 
 After installing Docker, enable the Docker service to start automatically upon system reboot:
 
-```bash
+```
 sudo systemctl enable docker
 ```
 
 Install docker compose plugin:
 
-```bash
+```
 sudo mkdir -p /usr/local/lib/docker/cli-plugins
 sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/lib/docker/cli-plugins/docker-compose
 sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
@@ -48,20 +48,20 @@ sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
 Verify Docker Compose installation:
 
-```bash
+```
 docker compose version
 ```
 
 ## Run
 
 Git clone this project to your server:
-```bash
+```
 sudo git clone https://github.com/koonox/nav-editor.git
 ```
 
 Run:
 
-```bash
+```
 sudo docker compose up -d 
 ```
 
