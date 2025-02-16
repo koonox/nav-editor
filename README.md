@@ -59,7 +59,7 @@ Git clone this project to your server:
 sudo git clone https://github.com/koonox/nav-editor.git
 ```
 
-Run:
+Run by docker compose:
 
 ```
 sudo docker compose up -d 
@@ -69,7 +69,7 @@ If run sucess, nav-editor will listen to default port `80`
 
 Open your browser (e.g., Chrome) and visit the following URL to access the nav-editor:
 
-https://your_server_ip
+`https://your_server_ip`
 
 Default username and password:
 - username: `admin`
@@ -77,5 +77,6 @@ Default username and password:
 
 > You must set port `80` can access in inbound rules of security rules
 
-Finally you can resolve your domain to your IP, and you can access nav-editor project like it
-https://your_domain
+Finally you can resolve your domain to your IP, and you can access nav-editor project like:
+
+`https://your_domain.com`
