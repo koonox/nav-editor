@@ -15,7 +15,6 @@ services:
 
   nav-editor-api:
     image: koonox/nav-editor-api:latest
-    platform: linux/amd64
     container_name: nav-editor-api
     restart: always
     volumes:
